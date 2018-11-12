@@ -7,8 +7,11 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "colors": "^1.3.2",
     "dva": "^2.3.1",
     "dva-loading": "^2.0.3",
+    "express": "^4.16.4",
+    "path": "^0.12.7",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
