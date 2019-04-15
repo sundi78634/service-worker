@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'dva';
 import styles from './IndexPage.css';
 
-function IndexPage() {
+function IndexPage({ location }) {
+  console.log(location);
   console.log('IndexPage');
   return (
     <div className={styles.normal}>
@@ -16,7 +17,6 @@ function IndexPage() {
   );
 }
 
-IndexPage.propTypes = {
-};
+IndexPage.propTypes = {};
 
 export default connect()(IndexPage);

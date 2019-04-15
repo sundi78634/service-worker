@@ -3,11 +3,13 @@
  * @description service worker event
  */
 
+const SW_VERSION = 'v2';
+
 // TODO path 递归
 this.addEventListener('install', function (event) {
   console.log('addEventListener install');
   event.waitUntil(
-    caches.open('v1')
+    caches.open(SW_VERSION)
       .then(function (cache) {
         return cache.addAll([
           '/dist/index.css',
@@ -35,7 +37,7 @@ this.addEventListener('fetch', function (event) {
         // and serve second one
         let responseClone = response.clone();
         
-        caches.open('v1').then(function (cache) {
+        caches.open(SW_VERSION).then(function (cache) {
           cache.put(event.request, responseClone);
         });
         return response;
@@ -44,4 +46,18 @@ this.addEventListener('fetch', function (event) {
       });
     }
   }));
+});
+
+this.addEventListener('activate', function (event) {
+  console.log('addEventListener activate');
+  let cacheWhitelist = [SW_VERSION];
+  event.waitUntil(
+    caches.keys().then(function (keyList) {
+      return Promise.all(keyList.map(function (key) {
+        if (cacheWhitelist.indexOf(key) === -1) {
+          return caches.delete(key);
+        }
+      }));
+    })
+  );
 });

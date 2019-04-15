@@ -1,10 +1,15 @@
 import dva from 'dva';
-import { browserHistory } from 'dva/router';
+// import { browserHistory } from 'dva/router';
+import createHistory from 'history/createBrowserHistory';
 import createLoading from 'dva-loading';
 import './index.css';
 
 // 1. Initialize
-const app = dva({ history: browserHistory });
+const app = dva({
+  history: createHistory({
+    basename: ''
+  })
+});
 
 // 2. Plugins
 app.use(createLoading());
