@@ -2,7 +2,6 @@
  * @author Sun
  * @description service worker event
  */
-
 const SW_VERSION = 'v2';
 
 // TODO path 递归
@@ -15,6 +14,7 @@ this.addEventListener('install', function (event) {
           '/dist/index.css',
           '/dist/index.html',
           '/dist/index.js',
+          '/src/assets/cerebrum.jpg',
         ]);
       })
       .catch(function (err) {
