@@ -6,17 +6,17 @@ const SW_VERSION = 'v2';
 
 // TODO path 递归
 this.addEventListener('install', function (event) {
-  console.log('addEventListener install');
+  console.log('event install');
   event.waitUntil(
     caches.open(SW_VERSION)
       .then(function (cache) {
         return cache.addAll([
-          '/dist/index.css',
-          '/dist/index.html',
-          '/dist/index.js',
-          '/dist/register.js',
-          '/dist/service-worker.js',
-          '/dist/static/cerebrum.a2321df3.jpg',
+          '/index.css',
+          '/index.html',
+          '/index.js',
+          '/register.js',
+          '/service-worker.js',
+          '/static/cerebrum.a2321df3.jpg',
         ]);
       })
       .catch(function (err) {
@@ -26,7 +26,8 @@ this.addEventListener('install', function (event) {
 });
 
 this.addEventListener('fetch', function (event) {
-  console.log('addEventListener fetch');
+  console.log('event fetch');
+  console.log(caches);
   event.respondWith(caches.match(event.request).then(function (response) {
     // caches.match() always resolves
     // but in case of success response will have value
@@ -44,6 +45,7 @@ this.addEventListener('fetch', function (event) {
         });
         return response;
       }).catch(function () {
+        // 请求没有匹配到缓存中的任何资源的时候，以及网络不可用
         return caches.match('/src/assets/cerebrum.jpg');
       });
     }
@@ -51,8 +53,8 @@ this.addEventListener('fetch', function (event) {
 });
 
 this.addEventListener('activate', function (event) {
-  console.log('addEventListener activate');
-  let cacheWhitelist = [SW_VERSION];
+  console.log('event activate');
+  let cacheWhitelist = ['v1', 'v2'];
   event.waitUntil(
     caches.keys().then(function (keyList) {
       return Promise.all(keyList.map(function (key) {
