@@ -27,6 +27,7 @@ this.addEventListener('install', function (event) {
 
 this.addEventListener('fetch', function (event) {
   console.log('event fetch');
+  console.log(caches);
   event.respondWith(caches.match(event.request).then(function (response) {
     // caches.match() always resolves
     // but in case of success response will have value
