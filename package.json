@@ -24,6 +24,6 @@
     "eslint-plugin-react": "^7.1.0",
     "husky": "^0.12.0",
     "redbox-react": "^1.4.3",
-    "roadhog": "^2.4.9"
+    "roadhog": "^2.5.0-beta.4"
   }
 }
