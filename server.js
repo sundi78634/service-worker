@@ -8,7 +8,6 @@ const colors = require('colors');
 
 const app = express();
 
-app.use(express.static('sw'));
 app.use(express.static('dist'));
 
 let server = app.listen(3333, function () {
