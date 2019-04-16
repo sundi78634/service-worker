@@ -1,5 +1,6 @@
 {
   "private": true,
+  "homepage": "https://sundi78634.github.io/service-worker/",
   "scripts": {
     "start": "roadhog server",
     "build": "roadhog build",
