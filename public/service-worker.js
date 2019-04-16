@@ -14,7 +14,9 @@ this.addEventListener('install', function (event) {
           '/dist/index.css',
           '/dist/index.html',
           '/dist/index.js',
-          '/src/assets/cerebrum.jpg',
+          '/dist/register.js',
+          '/dist/service-worker.js',
+          '/dist/static/cerebrum.a2321df3.jpg',
         ]);
       })
       .catch(function (err) {
