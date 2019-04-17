@@ -11,12 +11,13 @@ this.addEventListener('install', function (event) {
     caches.open(SW_VERSION)
       .then(function (cache) {
         return cache.addAll([
-          '/index.css',
-          '/index.html',
-          '/index.js',
-          '/register.js',
-          '/service-worker.js',
-          '/static/cerebrum.a2321df3.jpg',
+          '/service-worker/',
+          '/service-worker/index.css',
+          '/service-worker/index.html',
+          '/service-worker/index.js',
+          '/service-worker/register.js',
+          '/service-worker/service-worker.js',
+          '/service-worker/static/cerebrum.a2321df3.jpg',
         ]);
       })
       .catch(function (err) {
@@ -26,7 +27,7 @@ this.addEventListener('install', function (event) {
 });
 
 this.addEventListener('fetch', function (event) {
-  console.log('event fetch');
+  console.log('event fetch ---> ' + event.request.url);
   event.respondWith(caches.match(event.request).then(function (response) {
     // caches.match() always resolves
     // but in case of success response will have value
