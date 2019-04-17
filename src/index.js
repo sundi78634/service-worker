@@ -7,7 +7,7 @@ import './index.css';
 // 1. Initialize
 const app = dva({
   history: createHistory({
-    basename: ''
+    basename: '/service-worker'
   })
 });
 
