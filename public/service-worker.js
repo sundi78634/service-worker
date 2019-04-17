@@ -46,7 +46,7 @@ this.addEventListener('fetch', function (event) {
         return response;
       }).catch(function () {
         // 请求没有匹配到缓存中的任何资源的时候，以及网络不可用
-        return caches.match('/src/assets/cerebrum.jpg');
+        return caches.match('/service-worker/static/cerebrum.a2321df3.jpg');
       });
     }
   }));
