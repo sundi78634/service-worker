@@ -2,7 +2,7 @@
  * @author Sun
  * @description service worker event
  */
-const SW_VERSION = 'v2';
+const SW_VERSION = 'v3';
 
 // TODO path 递归
 this.addEventListener('install', function (event) {
@@ -54,7 +54,7 @@ this.addEventListener('fetch', function (event) {
 
 this.addEventListener('activate', function (event) {
   console.log('event activate');
-  let cacheWhitelist = ['v1', 'v2'];
+  let cacheWhitelist = ['v1', 'v2', 'v3'];
   event.waitUntil(
     caches.keys().then(function (keyList) {
       return Promise.all(keyList.map(function (key) {
