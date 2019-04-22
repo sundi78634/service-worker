@@ -15,10 +15,11 @@ this.addEventListener('install', function (event) {
           '/service-worker/index.css',
           '/service-worker/index.html',
           '/service-worker/index.js',
-          '/service-worker/manifest.js',
+          '/service-worker/manifest.json',
           '/service-worker/register.js',
           '/service-worker/service-worker.js',
           '/service-worker/static/cerebrum.a2321df3.jpg',
+          // '/service-worker/favicon/*',
         ]);
       })
       .catch(function (err) {
