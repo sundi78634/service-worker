@@ -4,6 +4,7 @@
   "start_url": ".",
   "display": "standalone",
   "background_color": "#FFFFFF",
+  "theme_color": "aliceblue",
   "description": "A simply Progressive Web App.",
   "icons": [{
     "src": "https://sundi.oss-cn-beijing.aliyuncs.com/image/favicon48.png",
