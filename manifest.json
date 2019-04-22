@@ -2,9 +2,10 @@
   "name": "HackerWeb2",
   "short_name": "HackerWeb2",
   "start_url": ".",
+  "scope": ".",
   "display": "fullscreen",
   "background_color": "#FFFFFF",
-  "theme_color": "aliceblue",
+  "theme_color": "#FFFFFF",
   "description": "A simply Progressive Web App.",
   "icons": [{
     "src": "https://sundi.oss-cn-beijing.aliyuncs.com/image/favicon48.png",
@@ -35,10 +36,11 @@
     "sizes": "192x192",
     "type": "image/png"
   }, {
-    "src": "https://sundi.oss-cn-beijing.aliyuncs.com/image/favicon512.png",
+    "src": "favicon512.png",
     "sizes": "512x512",
     "type": "image/png"
   }],
+  "prefer_related_applications": true,
   "related_applications": [{
     "platform": "web"
   }, {
