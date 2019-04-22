@@ -4,7 +4,7 @@
  */
 const SW_VERSION = 'v3';
 
-// TODO path 递归
+// TODO path 递归 || node 生成配置文件再读取
 this.addEventListener('install', function (event) {
   console.log('event install');
   event.waitUntil(
@@ -15,6 +15,7 @@ this.addEventListener('install', function (event) {
           '/service-worker/index.css',
           '/service-worker/index.html',
           '/service-worker/index.js',
+          '/service-worker/manifest.js',
           '/service-worker/register.js',
           '/service-worker/service-worker.js',
           '/service-worker/static/cerebrum.a2321df3.jpg',
