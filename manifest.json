@@ -1,7 +1,7 @@
 {
   "name": "HackerWeb2",
   "short_name": "HackerWeb2",
-  "start_url": ".",
+  "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#FFFFFF",
   "theme_color": "aliceblue",
