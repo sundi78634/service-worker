@@ -4,7 +4,7 @@
  */
 const SW_VERSION = 'v3';
 
-// TODO path 递归
+// TODO path 递归 || node 生成配置文件再读取
 this.addEventListener('install', function (event) {
   console.log('event install');
   event.waitUntil(
