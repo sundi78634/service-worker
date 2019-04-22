@@ -2,8 +2,8 @@
   "name": "HackerWeb2",
   "short_name": "HackerWeb",
   "start_url": ".",
-  "display": "standalone",
-  "background_color": "#f00",
+  "display": "fullscreen",
+  "background_color": "#FFFFFF",
   "description": "A simply Progressive Web App.",
   "icons": [{
     "src": "https://sundi.oss-cn-beijing.aliyuncs.com/image/favicon48.png",
