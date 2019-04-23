@@ -1,11 +1,12 @@
 {
-  "name": "HackerWeb2",
-  "short_name": "HackerWeb2",
+  "name": "Panda",
+  "short_name": "Panda",
+  "orientation": "portrait-primary",
   "start_url": ".",
   "scope": ".",
   "display": "standalone",
-  "background_color": "#FFFFFF",
-  "theme_color": "#FFFFFF",
+  "background_color": "#FF0",
+  "theme_color": "#0F0",
   "description": "A simply Progressive Web App.",
   "icons": [{
     "src": "https://sundi.oss-cn-beijing.aliyuncs.com/image/favicon48.png",
