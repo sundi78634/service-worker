@@ -1,9 +1,10 @@
 {
-  "name": "HackerWeb2",
-  "short_name": "HackerWeb2",
+  "name": "Panda",
+  "short_name": "Panda",
+  "orientation": "any",
   "start_url": ".",
   "scope": ".",
-  "display": "fullscreen",
+  "display": "standalone",
   "background_color": "#FFFFFF",
   "theme_color": "#FFFFFF",
   "description": "A simply Progressive Web App.",
