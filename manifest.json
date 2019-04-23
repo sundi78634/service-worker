@@ -3,7 +3,7 @@
   "short_name": "HackerWeb2",
   "start_url": ".",
   "scope": ".",
-  "display": "fullscreen",
+  "display": "standalone",
   "background_color": "#FFFFFF",
   "theme_color": "#FFFFFF",
   "description": "A simply Progressive Web App.",
