@@ -1,7 +1,7 @@
 {
   "name": "Panda",
   "short_name": "Panda",
-  "orientation": "portrait-primary",
+  "orientation": "any",
   "start_url": ".",
   "scope": ".",
   "display": "standalone",
