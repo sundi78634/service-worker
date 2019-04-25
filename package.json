@@ -27,8 +27,11 @@
     "querystring": "^0.2.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "redis": "^2.8.0",
+    "request": "^2.88.0",
     "url": "^0.11.0",
-    "url-join": "^4.0.0"
+    "url-join": "^4.0.0",
+    "web-push": "^3.3.3"
   },
   "devDependencies": {
     "babel-plugin-dva-hmr": "^0.3.2",
