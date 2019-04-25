@@ -89,6 +89,21 @@ if ('serviceWorker' in navigator) {
   });
 }
 
+// Chrome Android WebView 49 以上支持
+if ('serviceWorker' in navigator && 'SyncManager' in window) {
+  navigator.serviceWorker.ready.then(function (registration) {
+    const tag = 'first_sync';
+    document.querySelector('#sync_button').addEventListener('click', function () {
+      console.log('sync_button click');
+      registration.sync.register(tag).then(function () {
+        console.log('后台同步已触发', tag);
+      }).catch(function (err) {
+        console.log('后台同步触发失败', err);
+      });
+    });
+  });
+}
+
 function askPermission() {
   return new Promise(function (resolve, reject) {
     let permissionResult = Notification.requestPermission(function (result) {

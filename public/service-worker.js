@@ -117,6 +117,27 @@ self.addEventListener('notificationclick', function (event) {
   );
 });
 
+self.addEventListener('sync', function (event) {
+  console.log(`service worker需要进行后台同步，tag: ${event.tag}`);
+  let tag = event.tag;
+  const options = {
+    method: 'POST'
+  };
+  switch (tag) {
+    case 'first_sync':
+      let request = new Request(`sync?name=Sun&age=18`, options);
+      event.waitUntil(
+        fetch(request).then(function (response) {
+          response.json().then(console.log.bind(console));
+          return response;
+        })
+      );
+      break;
+    default:
+      console.log(`unexpected tag: ${tag}`);
+  }
+});
+
 self.addEventListener('activate', function (event) {
   console.log('event activate');
   let cacheWhitelist = ['v1', 'v2', 'v3'];

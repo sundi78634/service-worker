@@ -31,9 +31,9 @@ app.use(helmet());
 app.use(bodyParser());
 app.use(serve(path.resolve(__dirname, 'dist')));
 
+// const vapidKeys = webpush.generateVAPIDKeys();
 // publicKey: 'BF_wBwCDED0PXbLu5AEh4Ck_txsIUCNssTqBvKPD90ljzZcw7MGE7E3rPbbSkdusc2GlvOL_qRxDtsw720K_l1k'
 // privateKey: 'bhWX8uWzS1ivOqIigfZz7zDpAXqqakcPbMkCgUQc7R4'
-const vapidKeys = webpush.generateVAPIDKeys();
 webpush.setVapidDetails(
   'mailto:sundi78634@icloud.com',
   'BF_wBwCDED0PXbLu5AEh4Ck_txsIUCNssTqBvKPD90ljzZcw7MGE7E3rPbbSkdusc2GlvOL_qRxDtsw720K_l1k',
@@ -53,7 +53,20 @@ app.use(proxy(httpUrl, {
   }
 }));
 
+router.post('/sync', async function (ctx) {
+  let query = ctx.request.query;
+  console.log('sync query: ', query);
+  ctx.response.body = {
+    code: 200,
+    msg: '调用成功',
+    query: query,
+  }
+});
+
 let subArray = [];
+/**
+ * 存储subscription 信息
+ */
 router.post('/subscription', async ctx => {
   let body = ctx.request.body;
   subArray.push(body);
@@ -83,6 +96,11 @@ router.post('/push', async ctx => {
   };
 });
 
+/**
+ * 向push service推送信息
+ * @param {object} subscription
+ * @param {string} payload
+ */
 function pushMessage(subscription, payload = '') {
   webpush.sendNotification(subscription, payload, {}).then(data => {
     console.log('push service的相应数据:', JSON.stringify(data));

@@ -29,6 +29,7 @@ function IndexPage({ location, dispatch }) {
   return (
     <div className={styles.normal}>
       <h1 className={styles.title}>Yay! Welcome to Service Worker!</h1>
+      <button id={'sync_button'}>同步</button>
       <div id={'cerebrum'} className={styles.welcome} onClick={goHealth}/>
       <ul className={styles.list}>
         <li>You can normal visit this web site when the network error.</li>
